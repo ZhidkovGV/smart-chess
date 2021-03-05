@@ -6,22 +6,27 @@
     display: flex;
 }
 .white {
-    height: 64px;
-    width: 64px;
-    background-color: bisque;
+    background-color: rgb(236, 141, 25);
 }
 
 .black {
-    height: 64px;
-    width: 64px;
-    background-color: black;
+    background-color: rgb(49, 42, 42);
 }
 
-.pawn {
+.black-figure {
+    color: black;
+}
+
+.white-figure {
+    color: white
+}
+
+.cell {
     height: 64px;
     width: 64px;
-    background-image: url('/src//assets/pawn.png');
-    background-repeat: no-repeat;
-    background-position: 0px 0px;
-    background-size: cover;
+    font-size: 64px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
