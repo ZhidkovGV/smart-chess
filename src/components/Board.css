@@ -1,0 +1,27 @@
+.board {
+    display: grid;
+    grid-template-rows: repeat(8, calc(64px));
+}
+.row {
+    display: flex;
+}
+.white {
+    height: 64px;
+    width: 64px;
+    background-color: bisque;
+}
+
+.black {
+    height: 64px;
+    width: 64px;
+    background-color: black;
+}
+
+.pawn {
+    height: 64px;
+    width: 64px;
+    background-image: url('/src//assets/pawn.png');
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: cover;
+}
