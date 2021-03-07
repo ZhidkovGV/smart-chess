@@ -1,32 +1,36 @@
 .board {
-    display: grid;
-    grid-template-rows: repeat(8, calc(64px));
+  display: grid;
+  grid-template-rows: repeat(8, calc(64px));
 }
+
 .row {
-    display: flex;
+  display: flex;
 }
+
 .white {
-    background-color: rgb(236, 141, 25);
+  background-color: rgb(236, 141, 25);
 }
 
 .black {
-    background-color: rgb(49, 42, 42);
+  background-color: rgb(49, 42, 42);
 }
 
 .black-figure {
-    color: black;
+  color: black;
+  cursor: pointer;
 }
 
 .white-figure {
-    color: white
+  color: white;
+  cursor: pointer;
 }
 
 .cell {
-    height: 64px;
-    width: 64px;
-    font-size: 64px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 64px;
+  width: 64px;
+  font-size: 64px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

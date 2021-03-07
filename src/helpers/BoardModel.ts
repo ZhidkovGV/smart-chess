@@ -36,7 +36,7 @@ export interface Position {
   y: number;
 };
 
-export type boardModel = Array<Array<Cell>>;
+export type boardModel = Cell[][];
 
 export class Cell {
   public color: figureColor
@@ -64,7 +64,7 @@ export class GameBoardModel {
       board[teamConfig.pawnsRow].forEach(cell => cell.figure = new Pawn(teamConfig.color));
       board[teamConfig.bigGuysRow].forEach((cell, index) => {
         const figureClass = figuresPositionMap.get(index)
-        cell!.figure = new figureClass!(teamConfig.color) as Figure;
+        cell.figure = new figureClass!(teamConfig.color) as Figure;
       })
     })
     return board;
