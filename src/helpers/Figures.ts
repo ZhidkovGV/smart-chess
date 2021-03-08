@@ -102,12 +102,20 @@ export class Knight implements Figure {
   }
 }
 
-const checkCells = (nextCellRule: () => Position) => (continueCondition: () => boolean) => {
-  let cells: Position[] = [];
-  while (continueCondition()) {
-    cells = [...cells, nextCellRule()]
-  }
+const diagonalMoveRule = ({x, y}: Position) => {
+  return 
 }
+
+const findAvailablePositions = (nextPositionRule: (previousPosition: Position) => Position) => (initialPosition: Position) => 
+  (continueCondition: (currentPosition: Position) => boolean): Position[] => {
+    let availablePositions: Position[] = [];
+    let currentPosition = nextPositionRule(initialPosition);
+    while (continueCondition(currentPosition)) {
+      availablePositions = [...availablePositions, currentPosition];
+      currentPosition = nextPositionRule(currentPosition);
+    }
+    return availablePositions;
+  }
 
 
 
