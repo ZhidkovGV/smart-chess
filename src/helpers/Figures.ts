@@ -102,5 +102,12 @@ export class Knight implements Figure {
   }
 }
 
+const checkCells = (nextCellRule: () => Position) => (continueCondition: () => boolean) => {
+  let cells: Position[] = [];
+  while (continueCondition()) {
+    cells = [...cells, nextCellRule()]
+  }
+}
+
 
 

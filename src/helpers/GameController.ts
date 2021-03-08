@@ -5,7 +5,7 @@ export class GameController {
   private gameBoard: GameBoardModel;
   private currentTeamMove: figureColor = 'white';
 
-  get currentBoard() {
+  public get currentBoard(): boardModel {
     return this.gameBoard.currentBoard;
   }
 
@@ -26,16 +26,17 @@ export class GameController {
     return [];
   }
 
-  public moveFigure({ x: initialX, y: initialY }: Position, { x: newX, y: newY }: Position, moves: Position[]): boardModel {
+  public moveFigure({ x: initialX, y: initialY }: Position, { x: newX, y: newY }: Position, moves: Position[]): boolean {
     const { figure } = this.gameBoard.currentBoard[initialY][initialX];
     if (figure) {
       if (moves.find(({ x, y }) => x === newX && y === newY)) {
         this.gameBoard.currentBoard[initialY][initialX].figure = null;
         this.gameBoard.currentBoard[newY][newX].figure = figure;
         this._toggleMove();
+        return true
       }
     }
-    return this.gameBoard.currentBoard;
+    return false
   }
 
   private _castlingMoves(): Position[] {
